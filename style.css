@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Poppins', sans-serif;
+}
+:root{
+    --primary-color:#161725;
+    --secondary-color:#222335;
+}
+body{
+    background-color: var(--primary-color);
+}
+header{
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--secondary-color);
+}
+.logo{
+    font-size: 2vw;
+    color: red;
+    text-shadow: 2px 2px 4px black;
+}
+.search{
+    background: transparent;
+    border: solid 2px var(--primary-color);
+    padding: .7rem 1rem;
+    border-radius: 15px;
+    font-size: 1rem;
+    color: white;
+    outline: none;
+}
+.search:focus{
+    background-color: var(--primary-color);
+}
+.search::placeholder{
+    color: red;
+}
+main{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap:  wrap;
+    width: 90%;
+    margin: auto;
+    padding-top: 5%;
+}
+.movie{
+    width: 20%;
+    background-color: var(--secondary-color);
+    margin-bottom: 10%;
+    margin-left: 5%;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+.movie img{
+    width: 100%;
+}
+.movie-info{
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem 1rem;
+    letter-spacing: .5px;
+}
+.movie-info span{
+    background-color: var(--primary-color);
+    padding: .25rem .5rem;
+    border-radius: 6px;
+    font-weight: bold;
+}
+.movie-info span.green{
+    background-color: lightgreen;
+}
+.movie-info span.orange{
+    background-color: orange;
+}
+.movie-info span.red{
+    background-color: red;
+}
+.overview{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    opacity: .8;
+    padding: 1rem;
+    max-height: 100%;
+    transform: translateY(101%);
+    transition: transform .3s ease-in;
+}
+.movie:hover .overview{
+    transform: translateY(0%);
+}
+
+/* Media Query */
+@media screen and (max-width:450px) {
+    .movie{
+        min-width: 80%;
+    }
+    header{
+        flex-direction: column;
+    }
+    .logo{
+        font-size: 1rem;
+        margin-bottom: 2%;
+    }
+    .search{
+        background: transparent;
+        border: solid 2px var(--primary-color);
+        padding: .2rem 1rem;
+        border-radius: 5px;
+        font-size: .8rem;
+        color: white;
+        outline: none;
+    }
+}
+@media screen and (max-width:768px) and (min-width:500px) {
+    .movie{
+        min-width: 40%;
+    }
+
+}
