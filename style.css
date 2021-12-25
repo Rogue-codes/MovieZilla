@@ -25,7 +25,7 @@ header{
 }
 .search{
     background: transparent;
-    border: solid 2px var(--primary-color);
+    border: solid 2px red;
     padding: .7rem 1rem;
     border-radius: 15px;
     font-size: 1rem;
